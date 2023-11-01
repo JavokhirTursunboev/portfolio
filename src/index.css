@@ -1,0 +1,66 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg-1: #292F36;
+  --bg-2: #1A1E23;
+  --brand-1: #126706;
+  --brand-2: #98FAEC;
+  --html: #E54F24;
+  --css: white;
+  --js: #E7AD20;
+  --grey: #434540;
+  --react: #284960;
+}
+/* General classes */
+
+.Ubuntu {
+  font-family: "Ubuntu", sans-serif;
+}
+
+.BG-Text-U {
+  background-color: #ffffff;
+  color: #000000;
+}
+
+.H1-U {
+  font-size: 64px;
+  line-height: 72px;
+}
+
+.H2-U {
+  font-size: 32px;
+  line-height: 36px;
+}
+
+.Button-U {
+  font-size: 20px;
+  line-height: 24px;
+}
+
+.Article-U {
+  font-weight: light;
+  font-size: 16px;
+  line-height: 32px;
+  margin-bottom: 32px;
+}
+
+.Para-U {
+  font-weight: light;
+  font-size: 16px;
+  line-height: 18px;
+  margin-bottom: 16px;
+}
+
+.Label-U-M {
+  font-weight: medium;
+  font-size: 14px;
+  line-height: 16px;
+}
+
+.Label-U-L {
+  font-weight: light;
+  font-size: 14px;
+  line-height: 16px;
+}
