@@ -1,6 +1,6 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
 
 :root {
   --bg-1: #292f36;
@@ -96,3 +96,4 @@
   font-size: 14px;
   line-height: 18px;
 }
+
