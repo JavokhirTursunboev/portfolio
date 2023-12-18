@@ -50,7 +50,7 @@ const Main = () => {
           <h1 className="text-[2rem] md:text-[4rem]  text-white"> Hey</h1>
           <h1 className="text-[2rem] md:text-[4rem]  text-white"> I'm Javokhir</h1>
           <h1 className="text-[2rem] md:text-[4rem]  text-white">Full-Stack Developer</h1>
-          <p className="text-white  Para-M pr-11  py-[3rem]">
+          <p className="text-white  Para-M w-[80%]  py-[3rem]">
             I help busness grow by crafting amazing web experiences. If you're looking for a developer that
             likes to get stuff done.
           </p>
