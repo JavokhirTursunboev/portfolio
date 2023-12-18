@@ -1,6 +1,6 @@
 import React from "react";
 import { IoSearch } from "react-icons/io5";
-import { FaInstagram } from "react-icons/fa";
+import { FaLinkedin } from "react-icons/fa";
 import { FaTelegramPlane } from "react-icons/fa";
 import { FaGithub } from "react-icons/fa";
 
@@ -25,8 +25,8 @@ const Navbar = () => {
           </div>
           <div className="media flex  gap-5">
             <a href="" className="flex items-center gap-2">
-              <span className=" max-lg:hidden">Instagram</span>
-              <FaInstagram />
+              <span className=" max-lg:hidden">LinkedIn</span>
+              <FaLinkedin />
             </a>
             <a href="" className="flex items-center gap-2">
               <span className=" max-lg:hidden">Telegram</span>
