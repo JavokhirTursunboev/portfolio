@@ -13,6 +13,9 @@ export default {
       // => @media (min-width: 1440px) { ... }
     },
     extend: {
+      backgroundImage: {
+        "about-im": "url('./public/back.png')",
+      },
       colors: {
         "bg-1": "#292f36",
         "bg-2": "#1a1e23",
