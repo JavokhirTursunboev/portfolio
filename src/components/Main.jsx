@@ -6,7 +6,6 @@ import { PiShoppingBagOpenFill } from "react-icons/pi";
 import { IoCloudDownloadOutline } from "react-icons/io5";
 const Main = () => {
   const elementRef1 = useRef();
-
   useEffect(() => {
     const timer = setTimeout(() => {
       if (elementRef1.current) {
@@ -17,7 +16,7 @@ const Main = () => {
   });
 
   return (
-    <div className=" md:px-[8rem] px-0 py-[4rem] ">
+    <div className=" md:px-[8rem] px-5 py-[14rem] ">
       <h1 className="sm:text-brand-2 sm:text-[7.3rem] sm:visible invisible  text-center">Developer</h1>
       <div className="flex flex-col gap-[4rem]  lg:flex lg:flex-row lg:mt-[4rem]">
         {/* ! ========== box ========= */}
