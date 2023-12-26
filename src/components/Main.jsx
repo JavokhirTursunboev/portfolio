@@ -1,21 +1,32 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import img from "../assets/img.jpg";
 import { MdEmail } from "react-icons/md";
 import { IoLocation } from "react-icons/io5";
 import { PiShoppingBagOpenFill } from "react-icons/pi";
 import { IoCloudDownloadOutline } from "react-icons/io5";
 const Main = () => {
+  const elementRef1 = useRef();
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      if (elementRef1.current) {
+        elementRef1.current.style.animation = "none";
+      }
+      return () => clearTimeout(timer);
+    }, 5000);
+  });
+
   return (
     <div className=" md:px-[8rem] px-0 py-[4rem] ">
       <h1 className="sm:text-brand-2 sm:text-[7.3rem] sm:visible invisible  text-center">Developer</h1>
-      <div className="flex flex-col gap-[4rem]  ">
+      <div className="flex flex-col gap-[4rem]  lg:flex lg:flex-row lg:mt-[4rem]">
         {/* ! ========== box ========= */}
         <div
           className="flex flex-col 
          items-center gap-8 text-white
-          border-4 mt-16 py-6 px-6 w-80  
+          border-4 mt-16 lg:mt-0 py-6 px-6 w-80  
           mx-auto rounded-tl-[50%] rounded-br-[50%]
-           shadow-md shadow-white "
+           shadow-md shadow-white lg:min-w-[20rem] lg:min-h-[32.5rem] "
         >
           <div>
             <img src={img} alt="" className="w-24 h-24 rounded-[50%] m-6" />
@@ -39,7 +50,11 @@ const Main = () => {
               <PiShoppingBagOpenFill />
               <span>Full-time</span>
             </a>
-            <a href="" className="px-7 py-3 bg-white text-black rounded-[2rem] flex items-center gap-4 ">
+            <a
+              href=""
+              ref={elementRef1}
+              className="custom-bounce  px-7 py-3 bg-white text-black rounded-[2rem] flex items-center gap-4 "
+            >
               Download CV <IoCloudDownloadOutline />
             </a>
           </div>
@@ -56,7 +71,7 @@ const Main = () => {
           </p>
 
           <h2 className="text-[2rem] flex gap-6 items-center text-[#12F7D6]">
-            Let's Talk <MdEmail className="p-[0.5rem]  bg-[#43454D] rounded-[50%]" />
+            Let's Talk <MdEmail className="p-[0.5rem]  bg-[#43454D] rounded-[50%] animMail" />
           </h2>
         </div>
 

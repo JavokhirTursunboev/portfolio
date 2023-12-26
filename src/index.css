@@ -105,4 +105,28 @@
   background-repeat: no-repeat;
 }
 
+@keyframes custom-bounce {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-4px);
+  }
+}
+.custom-bounce {
+  animation: custom-bounce 1s infinite;
+}
 
+@keyframes animMail {
+  0%,
+  100% {
+    background-color: none;
+  }
+  50% {
+    background-color: red;
+  }
+}
+.animMail {
+  animation: animMail 3s infinite;
+}
