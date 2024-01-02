@@ -1,12 +1,14 @@
 import React from "react";
-import { IoSearch } from "react-icons/io5";
-import { FaLinkedin } from "react-icons/fa";
+import { IoMailOutline, IoSearch } from "react-icons/io5";
+import { FaCode, FaLinkedin, FaRegEdit, FaRegUser } from "react-icons/fa";
 import { FaTelegramPlane } from "react-icons/fa";
 import { FaGithub } from "react-icons/fa";
 import { Link, Outlet } from "react-router-dom";
+import { PiHamburger } from "react-icons/pi";
+import { FiMonitor } from "react-icons/fi";
 const Navbar = () => {
   return (
-    <>
+    <div>
       <div className="fixed w-full z-999  backdrop-blur-sm">
         <div
           className="flex px:8 py-6 md:px-32 md:py-15 mx-9 my-5 
@@ -45,8 +47,35 @@ const Navbar = () => {
       bg-white"
         />
       </div>
+
+      {/* hamburger */}
+
+      <div
+        className="hidden md:inline-flex fixed border rounded-[2.5rem]
+  py-[0.5rem] px-[0.75rem] mt-[10rem] ml-[4rem]
+  flex-col  gap-[1.5rem]"
+      >
+        <Link to={`/home`} className="px-1 py-1  ">
+          <PiHamburger className="h-[1rem] w-[1rem] fill-white " />
+        </Link>
+        <Link to={`/about`} className=" px-1 py-1">
+          <FaRegUser className="h-[1.5rem] w-[0.8rem] " color="white" />
+        </Link>
+        <div className=" px-1 py-1">
+          <FaCode className="h-[1.5rem] w-[0.8rem] " color="white" />
+        </div>
+        <div className=" px-1 py-1">
+          <FiMonitor className="h-[1.5rem] w-[0.8rem] " color="white" />
+        </div>
+        <div className=" px-1 py-1">
+          <FaRegEdit className="h-[1.5rem] w-[0.8rem] " color="white" />
+        </div>
+        <div className=" px-1 py-1">
+          <IoMailOutline className="h-[1.5rem] w-[0.8rem] " color="white" />
+        </div>
+      </div>
       <Outlet />
-    </>
+    </div>
   );
 };
 
