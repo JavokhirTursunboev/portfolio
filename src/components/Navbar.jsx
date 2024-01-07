@@ -1,15 +1,15 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { IoMailOutline, IoSearch } from "react-icons/io5";
 import { FaCode, FaLinkedin, FaRegEdit, FaRegUser } from "react-icons/fa";
 import { FaTelegramPlane } from "react-icons/fa";
 import { FaGithub } from "react-icons/fa";
-import { Link, Outlet } from "react-router-dom";
+import { Link, Outlet, useNavigate } from "react-router-dom";
 import { PiHamburger } from "react-icons/pi";
 import { FiMonitor } from "react-icons/fi";
 const Navbar = () => {
   return (
     <div>
-      <div className="fixed w-full z-999  backdrop-blur-sm">
+      <div className="fixed w-full z-999   backdrop-blur-sm">
         <div
           className="flex px:8 py-6 md:px-32 md:py-15 mx-9 my-5 
          flex-row justify-between items-center
@@ -20,7 +20,7 @@ const Navbar = () => {
           </div>
           <div className="flex justify-between gap-5">
             <div className="flex gap-5">
-              <Link to={`/home`}>Home</Link>
+              <Link to={`/`}>Home</Link>
               <Link to={`/about`}>About</Link>
             </div>
             <div className="search flex  relative  pr-2 w-[204px]  max-sm:hidden">
@@ -55,7 +55,7 @@ const Navbar = () => {
   py-[0.5rem] px-[0.75rem] mt-[10rem] ml-[4rem]
   flex-col  gap-[1.5rem]"
       >
-        <Link to={`/home`} className="px-1 py-1  ">
+        <Link to={`/`} className="px-1 py-1  ">
           <PiHamburger className="h-[1rem] w-[1rem] fill-white " />
         </Link>
         <Link to={`/about`} className=" px-1 py-1">
