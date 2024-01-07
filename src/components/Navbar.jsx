@@ -3,9 +3,10 @@ import { IoMailOutline, IoSearch } from "react-icons/io5";
 import { FaCode, FaLinkedin, FaRegEdit, FaRegUser } from "react-icons/fa";
 import { FaTelegramPlane } from "react-icons/fa";
 import { FaGithub } from "react-icons/fa";
-import { Link, Outlet, useNavigate } from "react-router-dom";
+import { Link, Outlet } from "react-router-dom";
 import { PiHamburger } from "react-icons/pi";
 import { FiMonitor } from "react-icons/fi";
+import Links from "./navbar/Links";
 const Navbar = () => {
   return (
     <div>
@@ -16,16 +17,15 @@ const Navbar = () => {
      text-white h-20 md:h-16"
         >
           <div className="logo font-bold ">
-            <a href="/home"> J-Dev </a>
+            <Link href="/home"> J-Dev </Link>
           </div>
           <div className="flex justify-between gap-5">
-            <div className="flex gap-5">
-              <Link to={`/`}>Home</Link>
-              <Link to={`/about`}>About</Link>
+            <div>
+              <Links />
             </div>
-            <div className="search flex  relative  pr-2 w-[204px]  max-sm:hidden">
-              <input type="text" className="rounded-3xl " />
-              <IoSearch className="icon absolute pt-1 text-black" />
+            <div className=" flex gap-4 h-full px-[20px] py-[10px] rounded-3xl border-none bg-white   max-sm:hidden">
+              <IoSearch className=" text-black m-auto" />
+              <input type="text" className=" focus:outline-none	 text-black" />
             </div>
             <div className="media flex  gap-5">
               <a href="" className="flex items-center gap-2">
