@@ -4,7 +4,7 @@ import { MdEmail } from "react-icons/md";
 import { IoLocation } from "react-icons/io5";
 import { PiShoppingBagOpenFill } from "react-icons/pi";
 import { IoCloudDownloadOutline } from "react-icons/io5";
-import ParallaxText from "./animation/parallax";
+import { FaGithub, FaLinkedin, FaTelegramPlane } from "react-icons/fa";
 
 const Main = () => {
   const elementRef1 = useRef();
@@ -71,32 +71,32 @@ const Main = () => {
               I help busness grow by crafting amazing web experiences. If you're looking for a developer that
               likes to get stuff done.
             </p>
-
-            <h2 className="text-[2rem] flex gap-6 items-center text-[#12F7D6]">
-              Let's Talk <MdEmail className="p-[0.5rem]  bg-[#43454D] rounded-[50%] animMail" />
-            </h2>
           </div>
 
           {/* about me box */}
-          <div className="flex flex-col   justify-center py-[3rem] px-[2rem] w-[14rem] mx-auto rounded-[5rem] text-white bg-bg-2 gap-[3rem]   ">
-            <div className="flex items-center gap-[1rem] ">
-              <span className="text-[3rem]">1</span>
-              <p className="  w-12">Programming Languages</p>
-            </div>
-            <div className="flex items-center gap-[1rem]">
-              <span className="text-[3rem]">1</span>
-              <p className="  w-12">Developer Tools</p>
-            </div>
-            <div className="flex items-center gap-[1rem]">
-              <span className="text-[3rem]">1</span>
-              <p className="  w-15">Years of experiences</p>
+          <div className="flex flex-col   justify-center  py-[3rem] px-[2rem] w-[14rem] mx-auto rounded-[5rem] text-white bg-bg-2 gap-[3rem]   ">
+            <div className="flex flex-col gap-[1rem] items-start">
+              <h2 className="text-[2rem] flex gap-6 items-center text-[#12F7D6]">Let's Talk</h2>
+
+              <a href="mailto:hijavokhir@gmail.com" className="flex items-center gap-2">
+                <MdEmail />
+                <span className="">Email</span>
+              </a>
+              <a href="https://www.linkedin.com/in/javokhir-tursunboev/" className="flex items-center gap-2">
+                <FaLinkedin />
+                <span className="">LinkedIn</span>
+              </a>
+              <a href="https://t.me/Javohirengineer" className="flex items-center gap-2">
+                <FaTelegramPlane />
+                <span className="">Telegram</span>
+              </a>
+              <a href="https://github.com/JavokhirTursunboev" className="flex items-center gap-2">
+                <FaGithub />
+                <span className="">GitHub</span>
+              </a>
             </div>
           </div>
         </div>
-      </div>
-      <div>
-        <ParallaxText baseVelocity={-3}>Javascript React.js Next.js Typescrpt</ParallaxText>
-        <ParallaxText baseVelocity={3}>GIthub Html CSS Tailwind boostrap</ParallaxText>
       </div>
     </>
   );

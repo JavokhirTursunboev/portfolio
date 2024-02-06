@@ -6,6 +6,8 @@ import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import ErrorPage from "./error.jsx";
 import About from "./components/About.jsx";
 import Navbar from "./components/Navbar.jsx";
+import Contact from "./components/Contact.jsx";
+import Portfolio from "./components/Portfolio.jsx";
 
 // Router
 const router = createBrowserRouter([
@@ -21,6 +23,14 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <App />,
+      },
+      {
+        path: "contact",
+        element: <Contact />,
+      },
+      {
+        path: "/portfolio",
+        element: <Portfolio />,
       },
     ],
   },

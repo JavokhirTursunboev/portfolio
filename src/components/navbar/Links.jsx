@@ -11,6 +11,14 @@ export default function Links() {
       path: "/about",
       title: "About",
     },
+    {
+      path: "/contact",
+      title: "Contact",
+    },
+    {
+      path: "/portfolio",
+      title: "Portfolio",
+    },
   ];
   return (
     <div className="flex gap-5">
