@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import NavLink from "./navLink";
 
 const links = [
   {
@@ -31,23 +32,21 @@ export default function Navbar() {
       {/* ======= NAVBAR FOR LARGE ========== */}
       <div className=" hidden md:flex gap-4 w-1/3">
         {links.map((link) => (
-          <Link href={link.url} key={link.title}>
-            {link.title}
-          </Link>
+         <NavLink link={link} key={link.title}/>
         ))}
       </div>
 
       {/* ==== LOGO ==== */}
-      <div className="md:hidden lg:flex w-1/3 justify-center">
+      <div className="md:hidden lg:flex  xl:justify-center w-[120px]">
         <Link
           href="/"
           className="text-sm bg-black rounded-md p-1
-           font-semibold flex items-center justify-center"
+           font-semibold flex items-center justify-center "
         >
           <span className="text-white mr-1">Javokhir</span>
           <span
             className="text-black bg-white rounded
-           w-12 h-8 flex items-center  justify-center"
+           w-12 h-8 flex items-center  justify-center "
           >
             .dev
           </span>
