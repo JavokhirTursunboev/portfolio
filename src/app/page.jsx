@@ -1,9 +1,17 @@
+'use client'
 import Image from 'next/image';
+import { motion } from 'framer-motion';
 const Homepage = () => {
-  return <div className="px-4 h-full sm:px-8 md:px-12 lg:px-20 xl:px-48 flex flex-col md:flex-row items-center justify-evenly ">
+  return <motion.div
+  className='h-full'
+  initial={{y:'-200vh'}}
+  animate={{y:'0%'}}
+  transition={{duration:1}}
+  >
+   <div className="px-4 h-full sm:px-8 md:px-12 lg:px-20 xl:px-48 flex flex-col md:flex-row items-center justify-evenly ">
     {/* image container */}
-    <div className="md:h-1/2 mb-5 flex md:flex-1 items-center justify-center -z-1 ">
-       <div className=" h-[200px] w-[200px] md:h-[300px] md:w-[300px]  relative border rounded-full border-1 border-black flex justify-center items-center overflow-hidden bg-[#FEFEFE]">
+    <div className="md:h-1/2 mb-5 flex md:flex-1 items-center justify-center  ">
+       <div className=" h-[200px] w-[200px] md:h-[300px] md:w-[300px]  relative border rounded-full border-1 border-black flex justify-center items-center overflow-hidden bg-[#FEFEFE]  ">
 
         <Image src="/myself.png" alt="" fill className="object-contain " />
        </div>
@@ -21,6 +29,8 @@ const Homepage = () => {
   </div>
 </div>
   </div>
+  
+  </motion.div>
 };
 
 export default Homepage;
