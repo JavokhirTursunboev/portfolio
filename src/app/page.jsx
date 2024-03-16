@@ -11,9 +11,9 @@ const Homepage = () => {
    <div className="px-4 h-full sm:px-8 md:px-12 lg:px-20 xl:px-48 flex flex-col md:flex-row items-center justify-evenly ">
     {/* image container */}
     <div className="md:h-1/2 mb-5 flex md:flex-1 items-center justify-center  ">
-       <div className=" h-[200px] w-[200px] md:h-[300px] md:w-[300px]  relative border rounded-full border-1 border-black flex justify-center items-center overflow-hidden bg-[#FEFEFE]  ">
+       <div className=" h-[200px] w-[200px] md:h-[300px] md:w-[300px]  relative  rounded-full border-2 border-black flex justify-center items-center overflow-hidden bg-[#FEFEFE] ">
 
-        <Image src="/myself.png" alt="" fill className="object-contain " />
+        <Image src="/myself.png" alt="" fill className="object-contain p-1" />
        </div>
     </div>
 
