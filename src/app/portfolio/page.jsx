@@ -49,7 +49,7 @@ const PortfolioPage = () => {
                   <Link href={item.link} className="" target='_blank'>
                     <LuScreenShare className='text-[25px] hover:text-orange-500' /> 
                   </Link>
-                  <Link href={item.github} className="">
+                  <Link href={item.github} className="" target='_blank'>
                   <FaGithub className='text-[25px] hover:text-black'/>
                   </Link>
                 </div>
