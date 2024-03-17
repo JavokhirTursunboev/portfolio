@@ -1,7 +1,19 @@
 'use client'
-import { motion } from 'framer-motion';
+import { motion, useScroll, useInView } from 'framer-motion';
+import Brain from './../../components/brain';
+import { useRef,  } from 'react';
 
 export default function About() {
+
+  const containerRef = useRef()
+  const { scrollYProgress } = useScroll({ container: containerRef });  
+
+
+const skillRef = useRef()
+const isSkillRefInView = useInView(skillRef, {margin:"-100px"})
+const experienceRef = useRef()
+const isExperienceRef = useInView(experienceRef, {margin:"-100px"})
+
   return  <motion.div
   className='h-full'
   initial={{y:'-200vh'}}
@@ -9,10 +21,10 @@ export default function About() {
   transition={{duration:1}}
   >
     {/* container */}
-    <div className="h-full overflow-scroll lg:flex">
+    <div className="h-full overflow-scroll lg:flex" ref={containerRef}>
       {/* text container */}
-      <div className="p-4 sm:p-8 md:p-12 lg:p-20 xl:p-48 flex flex-col gap-24 md:gap-32 lg:gap-48 xl:gap-64 lg:w-2/3 lg:pr-0 xl:1/2">
-        {/* biography */}
+      <div className="p-4 sm:p-8 md:p-12 lg:p-20  flex flex-col gap-24 md:gap-32 lg:gap-48  lg:w-2/3 lg:pr-0 xl:w-1/2">
+          {/* BIOGRAPHY CONTAINER */}
         <div className="flex flex-col gap-12 justify-center">
           <h1 className='font-bold text-2xl' >Software Engineer</h1>
           <p className='text-lg'>I`m Javokhir, a recent engineering graduate from Korea in 2024, specializes in the JavaScript/TypeScript ecosystem. Explore my stacks, projects, and experiences further or connect via LinkedIn or GitHub for more details. </p>
@@ -37,11 +49,16 @@ export default function About() {
         </div>
        
         {/* skills */}
-        <div className="">
+        <div className="flex flex-col gap-12 justify-center" ref={skillRef}>
           {/* skill title */}
-          <h2 className="font-bold text-2xl">SKILLS</h2>
+          <motion.h1 initial={{x:'-300px'}}
+          animate={isSkillRefInView ? {x:0} : {}}
+          transition={{delay:0.2}}
+          className="font-bold text-2xl">SKILLS</motion.h1>
           {/* skill list */}
-          <div className="flex gap-4 flex-wrap">
+          <motion.div initial={{x:'-300px'}}
+          animate={isSkillRefInView ? {x:0} : {}}
+          transition={{delay:0.2}} className="flex gap-4 flex-wrap">
             <div className="rounded p-2 text-sm cursor-pointer bg-black text-white hover:bg-white hover:text-black">JavaScript</div>
             <div className="rounded p-2 text-sm cursor-pointer bg-black text-white hover:bg-white hover:text-black">TypeScript</div>
             <div className="rounded p-2 text-sm cursor-pointer bg-black text-white hover:bg-white hover:text-black">Next.js</div>
@@ -59,7 +76,7 @@ export default function About() {
             <div className="rounded p-2 text-sm cursor-pointer bg-black text-white hover:bg-white hover:text-black">Figma</div>
             <div className="rounded p-2 text-sm cursor-pointer bg-black text-white hover:bg-white hover:text-black">Zod</div>
             <div className="rounded p-2 text-sm cursor-pointer bg-black text-white hover:bg-white hover:text-black">NextAuth</div>
-          </div>
+          </motion.div>
           {/* skill scroll */}
           
         <motion.svg
@@ -86,27 +103,33 @@ export default function About() {
             </motion.svg>
         </div>
           {/* experience */}
-          <div className="flex flex-col justify-center pb-48">
+          <div className="flex flex-col justify-center pb-48" ref={experienceRef}>
             {/* experience title */}
-            <h1 className='font-bold text-2xl '>EXPERIENCE</h1>
+            <motion.h1 initial={{x:'-300px'}}
+          animate={isExperienceRef ? {x:0} : {}}
+          transition={{delay:0.2}}
+          className="font-bold text-2xl "> EXPERIENCE</motion.h1>
             {/* experience list */}
-            <div className="">
+            <motion.div initial={{x:'-300px'}}
+          animate={isExperienceRef ? {x:0} : {}}
+          transition={{delay:0.2}} className="mt-20">
+           
             {/* experience list item */}
-            <div className="flex justify-between h-48 gap-5">
+            <div className="flex flex-col md:flex-row justify-between h-58 gap-5">
               {/* LEFT */}
-              <div className="w-1/3">
+              <div className="md:w-1/3">
                 <div className="bg-white p-3 font-semibold rounded-b-lg rounded-s-lg">Fullstack Web Developer</div>
                {/* job description */}
-                <div className="p-3 text-sm italic">
-                Experience a comprehensive showcase of my Fullstack Web Developer skills through my project with AdSwift, an Advertisement Startup. This endeavor exhibits proficiency in Next.js, TypeScript, Prisma, Swiper.js, and more, delivering a visually captivating application.  Visit <a href='https://adswift.me' target='_blank'>adswift.me</a> further details.
-                </div>
+               <div className="p-3 text-sm italic">
+        Experience a comprehensive showcase of my Fullstack Web Developer skills through my project with AdSwift, an Advertisement Startup. This endeavor exhibits proficiency in Next.js, TypeScript, Prisma, Swiper.js, and more, delivering a visually captivating application. Visit <a href='https://adswift.me' className='text-lg font-bold' target='_blank'> adswift.me</a> for further details.
+    </div>
                 {/* job date */}
                 <div className='text-red-400 text-sm font-semibold'> 2023 - 2024 March</div>
                 {/* job company */}
                 <div className='bg-white text-sm font-semibold w-fit rounded'>AdSwift Advertisment Startup </div>
               </div>
               {/* CENTER */}
-              <div className="w-1/6">
+              <div className="hidden md:block w-1/6">
                 {/* line */}
                 <div className="w-1 h-full bg-gray-600 rounded relative ">
                   {/* line circle */}
@@ -120,13 +143,13 @@ export default function About() {
             </div>
 
              {/* experience list item */}
-             <div className="flex justify-between h-48 gap-5">
+             <div className="flex flex-col md:flex-row justify-between mb-5 md:mb-0 md:h-48">
               {/* LEFT */}
-              <div className="w-1/3">
+              <div className=" md:w-1/3">
                 <div className=""></div>
               </div>
               {/* CENTER */}
-              <div className="w-1/6">
+              <div className="hidden md:block w-1/6">
                 {/* line */}
                 <div className="w-1 h-full bg-gray-600 rounded relative ">
                   {/* line circle */}
@@ -134,35 +157,35 @@ export default function About() {
                 </div>
               </div>
               {/* RIGHT */}
-              <div className='w-1/3'>
-              <div className="bg-white p-3 font-semibold rounded-b-lg rounded-s-lg">Fullstack Web Developer</div>
+              <div className='md:w-1/3'>
+              <div className="bg-white p-3 font-semibold rounded-b-lg rounded-s-lg">Jeonbuk National University</div>
                {/* job description */}
                 <div className="p-3 text-sm italic">
-                Experience a comprehensive showcase of my Fullstack Web Developer skills through my project with AdSwift, an Advertisement Startup. This endeavor exhibits proficiency in Next.js, TypeScript, Prisma, Swiper.js, and more, delivering a visually captivating application.  Visit <a href='https://adswift.me' target='_blank'>adswift.me</a> further details.
+                I graduated with an International Engineering Bachelor`s degree from Jeonbuk National University. This program provided me with a comprehensive understanding of engineering principles on a global scale, equipping me with the skills necessary to excel in a diverse and dynamic field.
                 </div>
                 {/* job date */}
-                <div className='text-red-400 text-sm font-semibold'> 2023 - 2024 March</div>
+                <div className='text-red-400 text-sm font-semibold'> 2019 - 2023 December </div>
                 {/* job company */}
-                <div className='bg-white text-sm font-semibold w-fit rounded'>AdSwift Advertisment Startup </div>
+                <div className='bg-white text-sm font-semibold w-fit rounded'>3.68 / 4 GPA </div>
               </div>
             </div>
 
              {/* experience list item */}
-             <div className="flex justify-between h-48 gap-5">
+             <div className="flex flex-col md:flex-row justify-between h-48 gap-5">
               {/* LEFT */}
-              <div className="w-1/3">
-                <div className="bg-white p-3 font-semibold rounded-b-lg rounded-s-lg">Fullstack Web Developer</div>
+              <div className="md:w-1/3">
+                <div className="bg-white p-3 font-semibold rounded-b-lg rounded-s-lg">Inernship</div>
                {/* job description */}
                 <div className="p-3 text-sm italic">
-                Experience a comprehensive showcase of my Fullstack Web Developer skills through my project with AdSwift, an Advertisement Startup. This endeavor exhibits proficiency in Next.js, TypeScript, Prisma, Swiper.js, and more, delivering a visually captivating application.  Visit <a href='https://adswift.me' target='_blank'>adswift.me</a> further details.
+                 I worked remotely as an intern front-end developer on an online IT education website. The website was built using Vue.js and JavaScript. For further details about my role and contributions, you can visit <a href='https://kadirov.dev/' className='text-lg font-bold' target='_blank'> kadirov.dev </a> further details.
                 </div>
                 {/* job date */}
                 <div className='text-red-400 text-sm font-semibold'> 2023 - 2024 March</div>
                 {/* job company */}
-                <div className='bg-white text-sm font-semibold w-fit rounded'>AdSwift Advertisment Startup </div>
+                <div className='bg-white text-sm font-semibold w-fit rounded'>Kadirov.Dev </div>
               </div>
               {/* CENTER */}
-              <div className="w-1/6">
+              <div className="hidden md:block w-1/6">
                 {/* line */}
                 <div className="w-1 h-full bg-gray-600 rounded relative ">
                   {/* line circle */}
@@ -174,12 +197,14 @@ export default function About() {
                 <div></div>
               </div>
             </div>
-            </div>
+            </motion.div>
           </div>
         
       </div>
       {/* svg container */}
-      <div className="hidden lg:block w-1/3 xl:1/2 "></div>
+      <div className="hidden lg:block w-1/3 xl:w-1/2 top-0 z-30 sticky ">
+        <Brain  scrollYProgress={scrollYProgress} />
+      </div>
     </div>
   </motion.div>
 }
