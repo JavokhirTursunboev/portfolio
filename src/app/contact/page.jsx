@@ -65,11 +65,11 @@ const ContactPage = () => {
         <form
           onSubmit={sendEmail}
           ref={form}
-          className=" lg:h-full lg:w-1/2 bg-red-50 rounded-xl text-xl flex flex-col gap-8 justify-center p-24 max-w-[900px] "
+          className=" lg:h-full lg:w-1/2 bg-red-50 rounded-xl text-xl flex flex-col gap-8 justify-center p-10 md:p-24 max-w-[900px] "
         >
           <span>Your Message</span>
           <textarea
-            rows={3}
+            rows={3} 
             className="bg-transparent border-b-2 border-b-black outline-none resize-none"
             name="user_message"
             defaultValue=' Dear Javokhir,'/>
