@@ -10,9 +10,9 @@ export default function About() {
 
 
 const skillRef = useRef()
-const isSkillRefInView = useInView(skillRef, {margin:"-100px"})
+const isSkillRefInView = useInView(skillRef,  {once:true})
 const experienceRef = useRef()
-const isExperienceRef = useInView(experienceRef, {margin:"-100px"})
+const isExperienceRef = useInView(experienceRef,  {once:true})
 
   return  <motion.div
   className='h-full'
