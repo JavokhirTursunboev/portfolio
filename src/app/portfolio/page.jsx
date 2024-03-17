@@ -4,6 +4,8 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import { useRef } from "react";
+import { LuScreenShare } from "react-icons/lu";
+import { FaGithub } from "react-icons/fa";
 
 
 
@@ -24,7 +26,7 @@ const PortfolioPage = () => {
         <div className="w-screen h-[calc(100vh-6rem)] flex items-center justify-center text-8xl text-center">
           My Works
         </div>
-        <div className="sticky top-0 flex h-screen gap-4 items-center overflow-hidden">
+        <div className="sticky top-0 flex h-screen gap-4 items-center overflow-hidden ">
           <motion.div style={{ x }} className="flex">
             <div className="h-screen w-screen flex items-center justify-center bg-gradient-to-r from-purple-300 to-red-300" />
             {items.map((item) => (
@@ -32,19 +34,25 @@ const PortfolioPage = () => {
                 className={`h-screen w-screen flex items-center justify-center bg-gradient-to-r ${item.color}`}
                 key={item.id}
               >
-                <div className="flex flex-col gap-8 text-white">
-                  <h1 className="text-xl font-bold md:text-4xl lg:text-6xl xl:text-8xl">
+                <div className="flex flex-col gap-5 text-white">
+                  <Link href={item.link} className="text-xl font-bold md:text-4xl lg:text-6xl xl:text-8xl" target='_blank'>
                     {item.title}
-                  </h1>
+                  </Link>
                   <div className="relative w-80 h-56 md:w-96 md:h-64 lg:w-[500px] lg:h-[350px] xl:w-[600px] xl:h-[420px]">
-                    <Image src={item.img} alt="" fill />
+                    <Image src={item.img} alt="" fill className='object-contain' />
+                    
                   </div>
                   <p className="w-80 md:w96 lg:w-[500px] lg:text-lg xl:w-[600px]">
                     {item.desc}
                   </p>
-                  <Link href={item.link} className="flex justify-end">
-                    <button className="p-2 text-sm md:p-4 md:text-md lg:p-8 lg:text-lg bg-white text-gray-600 font-semibold m-4 rounded">See Demo</button>
+                <div className=" flex items-center gap-3 justify-end" >
+                  <Link href={item.link} className="" target='_blank'>
+                    <LuScreenShare className='text-[25px] hover:text-orange-500' /> 
                   </Link>
+                  <Link href={item.github} className="">
+                  <FaGithub className='text-[25px] hover:text-black'/>
+                  </Link>
+                </div>
                 </div>
               </div>
             ))}
