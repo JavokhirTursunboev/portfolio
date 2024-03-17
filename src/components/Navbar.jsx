@@ -180,8 +180,8 @@ export default function Navbar() {
          text-white flex flex-col items-center justify-center gap-8 text-4xl z-40 "
           >
             {links.map((link) => (
-             <motion.div className=" cursor-pointer" variants={listItemVariants} key={link.title}  >
-             <Link href={link.url} >
+             <motion.div className="cursor-pointer" variants={listItemVariants} key={link.title}  >
+             <Link href={link.url} className="cursor-pointer" >
                  {link.title}
               </Link>
               </motion.div>
